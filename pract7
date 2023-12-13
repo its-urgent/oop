@@ -2,35 +2,40 @@
 #include <map>
 #include <string>
 using namespace std;
+
 int main() {
-// Declare a map with state names as keys and populations as values
-map<string, int> populationMap;
-// Insert state names and their populations into the map
-populationMap["Brasil"] = 193;
-populationMap["China"] = 1339;
-populationMap["India"] = 1187;
-populationMap["Indonesia"] = 234;
-populationMap["Pakistan"] = 170;
-// Display the size of the population map
-cout << "Size of population Map: " << populationMap.size() << endl;
-// Display populations of all states
-for (const auto& entry : populationMap) {
-cout << entry.first << ": " << entry.second << " million" << endl;
-}
-// Prompt the user to enter a state name
-cout << "Enter the name of a county: ";
-string userInput;
-cin >> userInput;
-// Check if the entered state name is in the map
-auto it = populationMap.find(userInput);
-if (it != populationMap.end()) {
-// State found, display its population
-cout << userInput << "'s population is " << it->second << " million"
-<< endl;
-} else {
-// State not found
-cout << "Population information not available for " << userInput <<
-endl;
-}
-return 0;
+    // Declare a map with state names as keys and populations as values
+    map<string, int> populationMap;
+
+    // Insert state names and their populations into the map
+    populationMap["Brasil"] = 193;
+    populationMap["China"] = 1339;
+    populationMap["India"] = 1187;
+    populationMap["Indonesia"] = 234;
+    populationMap["Pakistan"] = 170;
+
+    // Display the size of the population map
+    cout << "Size of population Map: " << populationMap.size() << endl;
+
+    // Display populations of all states
+    for (const auto& entry : populationMap) {
+        cout << entry.first << ": " << entry.second << " million" << endl;
+    }
+
+    // Prompt the user to enter a state name
+    cout << "Enter the name of a county: ";
+    string userInput;
+    cin >> userInput;
+
+    // Check if the entered state name is in the map
+    auto it = populationMap.find(userInput);
+    if (it != populationMap.end()) {
+        // State found, display its population
+        cout << userInput << "'s population is " << it->second << " million" << endl;
+    } else {
+        // State not found
+        cout << "Population information not available for " << userInput << endl;
+    }
+
+    return 0;
 }
